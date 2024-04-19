@@ -106,7 +106,7 @@
                 <div class="intro--banner">
 
                   <h1>Primogem<br>Counter</h1>
-                  <!-- <button class="cta">Hire Us
+                  <!-- <button class="cta">About Rang Rang
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -116,31 +116,81 @@
                 </button> -->
                   <div>
                     <h3>Total Primogems</h3>
-                    <h1 id="total"></h1>
+                    <h1>= <span id="total"></span></h1>
                   </div>
 
                   <img src="assets/img/navia.png" alt="Navia">
                 </div>
                 <div class="intro--options">
-                  <span style="width: 25%; margin-top: 18px;">
+                  <span style="width: 45%">
                     <div class="work-request--information">
                       <div class="information-name">
-                        <input id="days" type="number" spellcheck="false" min="1" value="1">
-                        <label for="name" style="margin-left: 15px;">Days</label>
+                        <h3>Day: </h3>
+                        <!-- <input id="days" type="number" spellcheck="false" min="1" value="1"> -->
+                        <span id="days" style="user-select: none;">1</span>
+                        <!-- <label for="name" style="margin-left: 15px;">Days</label> -->
                       </div>
                     </div>
+                    <div style="margin-top: 80px;">
+                      <button class="btn-success" onclick="incrementDays(1)">+1</button>
+                      <button class="btn-fail" onclick="decrementDays(1)">-1</button>
+                      <button class="btn-success" onclick="incrementDays(10)">+10</button>
+                      <button class="btn-fail" onclick="decrementDays(10)">-10</button>
+                      <button class="btn-fail" style="margin-top: 10px;" onclick="resetDays()">Reset Days</button>
+                    </div>
                   </span>
-                  <span>
+                  <span style="width: 40%">
                     <h3><label for="welkin">Blessing of the welkin moon?</label></h3>
                     <input type="checkbox" id="welkin" />
+
                   </span>
-                  <span>
+                  <span style="width: 25%">
                     <h3><label for="bp">Battle Pass?</label></h3>
                     <input type="checkbox" id="bp" />
                   </span>
+                  
+                  <!-- <span style="width: 45%">
+                    <h3>Spiral Abyss</h3>
+                    <label>Floor 9  :</label>
+                    <select name="" id="">
+                      <option value="">0 Stars</option>
+                      <option value="">3 Stars</option>
+                      <option value="">6 Stars</option>
+                      <option value="">9 Stars</option>
+                    </select>
+                    <br>
+                    <label>Floor 10 :</label>
+                    <select name="" id="">
+                      <option value="">0 Stars</option>
+                      <option value="">3 Stars</option>
+                      <option value="">6 Stars</option>
+                      <option value="">9 Stars</option>
+                    </select>
+                    <br>
+                    <label>Floor 11 :</label>
+                    <select name="" id="">
+                      <option value="">0 Stars</option>
+                      <option value="">3 Stars</option>
+                      <option value="">6 Stars</option>
+                      <option value="">9 Stars</option>
+                    </select>
+                    <br>
+                    <label>Floor 12 :</label>
+                    <select name="" id="">
+                      <option value="">0 Stars</option>
+                      <option value="">3 Stars</option>
+                      <option value="">6 Stars</option>
+                      <option value="">9 Stars</option>
+                    </select>
+                  </span> -->
                 </div>
-                <p style="color: red;">Warning: if your using <span style="font-weight: bolder;">Tiktok</span> browser
-                  it have a little bug, suggested using other browser</p>
+                <p>
+                  <span id="days-value">1</span> Day Daily Commision,
+                  <span id="welkin-value"></span> Blessing of The Welkin Moon,
+                  <span id="bp-value"></span> Battle Pass
+<!--                 
+                <p style="color: red;">Warning: if your using <span style="font-weight: bolder; font-style: italic;">Tiktok</span> browser
+                  it have a little bug, suggested using other browser</p> -->
               </div>
             </li>
             <li class="l-section section">
@@ -168,20 +218,25 @@
                     <div class="work-request--information">
                       <div class="information-name">
                         <p>Primogem:</p>
-                        <input type="number" id="primogemz" name="primogemz" min="0" value="0"
-                          >
+                        <input type="number" id="primogemz" name="primogemz" min="0" value="0">
                         <!-- <label for="primogemz" style="margin-left: 25px;">Primogem</label> -->
-
-                        <button class="btn-success" onclick="incrementPrimogems(160)">+160</button>
-                        <button class="btn-fail" onclick="decrementPrimogems(160)">-160</button>
                       </div>
+                    </div>
+                    <div style="margin-top: 80px;">
+                      <button class="btn-success" onclick="incrementPrimogems(160)">+160</button>
+                      <button class="btn-fail" onclick="decrementPrimogems(160)">-160</button>
+                      <button class="btn-success" onclick="incrementPrimogems(1600)">+1600</button>
+                      <button class="btn-fail" onclick="decrementPrimogems(1600)">-1600</button>
+                      <button class="btn-fail" style="margin-top: 10px;" onclick="resetPrimogems()">Reset Primogem</button>
                     </div>
                   </span>
 
                 </div>
+                
                 <p style="color: red; margin-top: 80px;">Warning: if your using <span
                     style="font-weight: bolder;">Tiktok</span> browser it have a little bug, suggested using other
                   browser</p>
+                 
               </div>
             </li>
             <li class="l-section section">
@@ -272,6 +327,7 @@
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
         <script src="assets/js/functions-min.js"></script>
         <script src="assets/js/counter.js"></script>
+        <script src="assets/js/vibrate.js"></script>
 </body>
 
 </html>
