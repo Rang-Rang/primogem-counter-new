@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Primogem Counter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Primogem Counter">
+  <meta name="keywords" content="primogem, counter, genshin, genshinImpact, impact, genshin impact">
+  <meta name="author" content="Rang rang">
+  <link rel="icon" type="image/png"
+		href="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ce40f7429f6a162db872dc3cfd1f8905~c5_720x720.jpeg?lk3s=a5d48078&x-expires=1713621600&x-signature=JrImF6%2B%2Fzbi8mR7USV%2BHc3T6mDg%3D">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    :root {
+      --clr-primary: #8a2691;
+      --clr-header: rgba(155, 47, 187, 0.5);
+      --clr-accent: #f5ce5d;
+      --clr-neutral: #fff;
+      --clr-neutral-dark: #2d323f;
+      --clr-font: #fff;
+      --spacing: 1em;
+    }
+
+    .intro--banner::after {
+      background-color: var(--clr-accent);
+    }
+  
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 2px solid var(--clr-accent);
+      font: inherit;
+      color: var(--clr-accent);
+      width: 1.5em;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+
+    input[type="checkbox"]:checked{
+      /* background-color: #7c96ff; */
+      background-image: url(assets/img/icon-box.png);
+      background-size: 80%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .days-container input[type="number"] {
+	width: 8rem;
+	height: 2.5rem;
+	-webkit-appearance: none;
+	appearance: textfield;
+	font-family: BonoboRegular;
+	font-size: 1.5rem;
+	color: var(--clr-font);
+	text-align: center;
+	border: 3px solid var(--clr-accent);
+	border-radius: 16px;
+	background-color: transparent;
+}
+
+.days-container input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.days-container input[type="number"]:focus-visible {
+	outline: none;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="perspective effect-rotate-left">
+    <div class="container">
+      <div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active"><span>Home</span></li>
+              <li><span>Contributors</span></li>
+              <li><span>About</span></li>
+            </ul>
+          </nav>
+          <ul class="l-main-content main-content">
+            <li class="l-section section section--is-active">
+              <div class="intro">
+                <div class="intro--banner">
+                  <h1>Primogem<br>Counter</h1>
+                  <!-- <button class="cta">Hire Us
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button> -->
+                  <div>
+                    <h3>Total Primogems</h3>
+                    <h1 id="total"></h1>
+                  </div>
+
+                  <img src="assets/img/introduction-visual.png" alt="Welcome">
+                </div>
+                <div class="intro--options">
+                  <span style="width: 25%; margin-top: 18px;">
+                    <div class="work-request--information">
+                      <div class="information-name">
+                        <input id="days" type="number" spellcheck="false" min="1" value="1">
+                        <label for="name" style="margin-left: 10px;">Days</label>
+                      </div>
+                    </div>
+                  </span>
+                  <span>
+                    <h3><label for="welkin">Blessing of the welkin moon?</label></h3>
+                    <input type="checkbox" id="welkin" />
+                  </span>
+                  <span>
+                    <h3><label for="bp">Battle Pass?</label></h3>
+                    <input type="checkbox" id="bp" />
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="l-section section">
+              <div class="work">
+                <h2>Contributors</h2>
+                <div class="work--lockup">
+                  <ul class="slider">
+                    <!-- <li class="slider--item slider--item-left">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="assets/img/work-victory.jpg" alt="Rang Rang">
+                        </div>
+                        <p class="slider--item-title">Rang Rang</p>
+                        <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
+                          do.</p>
+                      </a>
+                    </li> -->
+                    <li class="slider--item slider--item-center">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ce40f7429f6a162db872dc3cfd1f8905~c5_720x720.jpeg?lk3s=a5d48078&x-expires=1713621600&x-signature=JrImF6%2B%2Fzbi8mR7USV%2BHc3T6mDg%3D" alt="Rang Rang">
+                        </div>
+                        <p class="slider--item-title">Rang Rang</p>
+                        <p class="slider--item-description">Saya Wibu</p>
+                      </a>
+                    </li>
+                    <!-- <li class="slider--item slider--item-right">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="assets/img/work-alex-nowak.jpg" alt="Alex Nowak">
+                        </div>
+                        <p class="slider--item-title">Alex Nowak</p>
+                        <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
+                          do.</p>
+                      </a>
+                    </li> -->
+                  </ul>
+                  <!-- <div class="slider--prev">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
+                      style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                      <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                        <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z" />
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="slider--next">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
+                      style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                      <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                        <path
+                          d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
+                      </g>
+                    </svg>
+                  </div> -->
+                </div>
+              </div>
+            </li>
+            <li class="l-section section">
+              <div class="about">
+                <div class="about--banner">
+                  <h2>Thank You<br>For using<br>Primogem<br>Counter</h2>
+                  <a href="https://rang-rang.netlify.app/">Rang Rang Bio Profile
+                    <span>
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
+                        style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                        <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                          <path
+                            d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
+                        </g>
+                      </svg>
+                    </span>
+                  </a>
+                  <img src="assets/img/about-visual.png" style="z-index: -1;" alt="Thank You">
+                </div>
+              </div>
+            </li>
+            
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+  <script src="assets/js/functions-min.js"></script>
+  <script src="assets/js/counter.js"></script>
+</body>
+
+</html>
