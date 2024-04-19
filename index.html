@@ -94,10 +94,10 @@
         <div class="l-wrapper">
           <nav class="l-side-nav">
             <ul class="side-nav">
-              <li class="is-active"><span>Home</span></li>
-              <li><span>Gacha</span></li>
-              <li><span>Contributors</span></li>
-              <li><span>About</span></li>
+              <li class="is-active"></li>
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
           </nav>
           <ul class="l-main-content main-content">
@@ -136,7 +136,7 @@
                       <button class="btn-fail" onclick="decrementDays(1)">-1</button>
                       <button class="btn-success" onclick="incrementDays(10)">+10</button>
                       <button class="btn-fail" onclick="decrementDays(10)">-10</button>
-                      <button class="btn-fail" style="margin-top: 10px;" onclick="resetDays()">Reset Days</button>
+                      <button class="btn-fail" style="margin-top: 10px;" onclick="resetDays()">Reset All</button>
                     </div>
                   </span>
                   <span style="width: 40%">
@@ -148,47 +148,46 @@
                     <h3><label for="bp">Battle Pass?</label></h3>
                     <input type="checkbox" id="bp" />
                   </span>
-                  
-                  <!-- <span style="width: 45%">
+
+                  <span style="width: 60%;">
                     <h3>Spiral Abyss</h3>
-                    <label>Floor 9  :</label>
-                    <select name="" id="">
-                      <option value="">0 Stars</option>
-                      <option value="">3 Stars</option>
-                      <option value="">6 Stars</option>
-                      <option value="">9 Stars</option>
-                    </select>
-                    <br>
-                    <label>Floor 10 :</label>
-                    <select name="" id="">
-                      <option value="">0 Stars</option>
-                      <option value="">3 Stars</option>
-                      <option value="">6 Stars</option>
-                      <option value="">9 Stars</option>
-                    </select>
-                    <br>
-                    <label>Floor 11 :</label>
-                    <select name="" id="">
-                      <option value="">0 Stars</option>
-                      <option value="">3 Stars</option>
-                      <option value="">6 Stars</option>
-                      <option value="">9 Stars</option>
-                    </select>
-                    <br>
-                    <label>Floor 12 :</label>
-                    <select name="" id="">
-                      <option value="">0 Stars</option>
-                      <option value="">3 Stars</option>
-                      <option value="">6 Stars</option>
-                      <option value="">9 Stars</option>
-                    </select>
-                  </span> -->
+                    <div style="display: flex; gap: 40px;">
+                      <div>
+                        <label for="floor9">Floor 9:</label><br>
+                        <input type="radio" name="floor9" id="floor9_0" value="0" onclick="updatePrimogems(0)"> <label for="floor9_0">0</label><br>
+                        <input type="radio" name="floor9" id="floor9_3" value="50" onclick="updatePrimogems(50)"> <label for="floor9_3">3</label><br>
+                        <input type="radio" name="floor9" id="floor9_6" value="100" onclick="updatePrimogems(100)"> <label for="floor9_6">6</label><br>
+                        <input type="radio" name="floor9" id="floor9_9" value="150" onclick="updatePrimogems(150)"> <label for="floor9_9">9</label><br>
+                    </div>
+                    <div>
+                        <label for="floor10">Floor 10:</label><br>
+                        <input type="radio" name="floor10" id="floor10_0" value="0" onclick="updatePrimogems(0)"> <label for="floor10_0">0</label><br>
+                        <input type="radio" name="floor10" id="floor10_3" value="50" onclick="updatePrimogems(50)"> <label for="floor10_3">3</label><br>
+                        <input type="radio" name="floor10" id="floor10_6" value="100" onclick="updatePrimogems(100)"> <label for="floor10_6">6</label><br>
+                        <input type="radio" name="floor10" id="floor10_9" value="150" onclick="updatePrimogems(150)"> <label for="floor10_9">9</label><br>
+                    </div>
+                    <div>
+                        <label for="floor11">Floor 11:</label><br>
+                        <input type="radio" name="floor11" id="floor11_0" value="0" onclick="updatePrimogems(0)"> <label for="floor11_0">0</label><br>
+                        <input type="radio" name="floor11" id="floor11_3" value="50" onclick="updatePrimogems(50)"> <label for="floor11_3">3</label><br>
+                        <input type="radio" name="floor11" id="floor11_6" value="100" onclick="updatePrimogems(100)"> <label for="floor11_6">6</label><br>
+                        <input type="radio" name="floor11" id="floor11_9" value="150" onclick="updatePrimogems(150)"> <label for="floor11_9">9</label><br>
+                    </div>
+                    <div>
+                        <label for="floor12">Floor 12:</label><br>
+                        <input type="radio" name="floor12" id="floor12_0" value="0" onclick="updatePrimogems(0)"> <label for="floor12_0">0</label><br>
+                        <input type="radio" name="floor12" id="floor12_3" value="50" onclick="updatePrimogems(50)"> <label for="floor12_3">3</label><br>
+                        <input type="radio" name="floor12" id="floor12_6" value="100" onclick="updatePrimogems(100)"> <label for="floor12_6">6</label><br>
+                        <input type="radio" name="floor12" id="floor12_9" value="150" onclick="updatePrimogems(150)"> <label for="floor12_9">9</label><br>
+                    </div>
+                    </div>
+                  </span>
                 </div>
                 <p>
                   <span id="days-value">1</span> Day Daily Commision,
-                  <span id="welkin-value"></span> Blessing of The Welkin Moon,
-                  <span id="bp-value"></span> Battle Pass
-<!--                 
+                  <span id="welkin-value">Without</span> Blessing of The Welkin Moon,
+                  <span id="bp-value">No</span> Battle Pass
+                  <!--                 
                 <p style="color: red;">Warning: if your using <span style="font-weight: bolder; font-style: italic;">Tiktok</span> browser
                   it have a little bug, suggested using other browser</p> -->
               </div>
@@ -208,7 +207,7 @@
                 </button> -->
                   <div>
                     <h3>Total Gacha</h3>
-                    <h1>= <span id="totalz"></span> Gacha</h1>
+                    <h1>= <span id="totalz">0</span> Gacha</h1>
                   </div>
 
                   <img src="assets/img/hutao.png" alt="Hutao">
@@ -227,16 +226,17 @@
                       <button class="btn-fail" onclick="decrementPrimogems(160)">-160</button>
                       <button class="btn-success" onclick="incrementPrimogems(1600)">+1600</button>
                       <button class="btn-fail" onclick="decrementPrimogems(1600)">-1600</button>
-                      <button class="btn-fail" style="margin-top: 10px;" onclick="resetPrimogems()">Reset Primogem</button>
+                      <button class="btn-fail" style="margin-top: 10px;" onclick="resetPrimogems()">Reset
+                        Primogem</button>
                     </div>
                   </span>
 
                 </div>
-                
+
                 <p style="color: red; margin-top: 80px;">Warning: if your using <span
                     style="font-weight: bolder;">Tiktok</span> browser it have a little bug, suggested using other
                   browser</p>
-                 
+
               </div>
             </li>
             <li class="l-section section">
@@ -255,14 +255,14 @@
                       </a>
                     </li> -->
                     <li class="slider--item slider--item-center">
-                      <a href="#0">
+                      <a href="https://rang-rang.netlify.app/">
                         <div class="slider--item-image">
                           <img
                             src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ce40f7429f6a162db872dc3cfd1f8905~c5_720x720.jpeg?lk3s=a5d48078&x-expires=1713621600&x-signature=JrImF6%2B%2Fzbi8mR7USV%2BHc3T6mDg%3D"
                             alt="Rang Rang">
                         </div>
                         <p class="slider--item-title">Rang Rang</p>
-                        <p class="slider--item-description">Saya Wibu</p>
+                        <p class="slider--item-description">Creator | Designer | Streamer</p>
                       </a>
                     </li>
                     <!-- <li class="slider--item slider--item-right">
@@ -276,7 +276,7 @@
                       </a>
                     </li> -->
                   </ul>
-                  <!-- <div class="slider--prev">
+                  <div class="slider--prev">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
                       style="enable-background:new 0 0 150 118;" xml:space="preserve">
@@ -296,7 +296,7 @@
                           d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
                       </g>
                     </svg>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </li>
