@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
     :root {
-      --clr-primary: #8a2691;
-      --clr-header: rgba(155, 47, 187, 0.5);
+      --clr-primary: #3080e9;
+      --clr-header: rgba(47, 119, 187, 0.5);
       --clr-accent: #f5ce5d;
       --clr-neutral: #fff;
       --clr-neutral-dark: #2d323f;
@@ -46,16 +46,43 @@
       background-repeat: no-repeat;
     }
 
+    .btn-success {
+      display: inline-block;
+      font-weight: 400;
+      color: #212529;
+      text-align: center;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      color: #fff;
+      background-color: #00b42a;
+    }
 
 
-    /* 
-.days-container input[type="number"]::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-}
+    .btn-success:hover {
+      background-color: #009723;
+    }
 
-.days-container input[type="number"]:focus-visible {
-	outline: none;
-} */
+    .btn-fail {
+      display: inline-block;
+      font-weight: 400;
+      color: #212529;
+      text-align: center;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      color: #fff;
+      background-color: #b40000;
+    }
+
+
+    .btn-fail:hover {
+      background-color: #970000;
+    }
   </style>
 </head>
 
@@ -68,6 +95,7 @@
           <nav class="l-side-nav">
             <ul class="side-nav">
               <li class="is-active"><span>Home</span></li>
+              <li><span>Gacha</span></li>
               <li><span>Contributors</span></li>
               <li><span>About</span></li>
             </ul>
@@ -76,7 +104,7 @@
             <li class="l-section section section--is-active">
               <div class="intro">
                 <div class="intro--banner">
-                  
+
                   <h1>Primogem<br>Counter</h1>
                   <!-- <button class="cta">Hire Us
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
@@ -91,14 +119,14 @@
                     <h1 id="total"></h1>
                   </div>
 
-                  <img src="assets/img/introduction-visual.png" alt="Welcome">
+                  <img src="assets/img/navia.png" alt="Navia">
                 </div>
                 <div class="intro--options">
                   <span style="width: 25%; margin-top: 18px;">
                     <div class="work-request--information">
                       <div class="information-name">
                         <input id="days" type="number" spellcheck="false" min="1" value="1">
-                        <label for="name" style="margin-left: 10px;">Days</label>
+                        <label for="name" style="margin-left: 15px;">Days</label>
                       </div>
                     </div>
                   </span>
@@ -111,7 +139,49 @@
                     <input type="checkbox" id="bp" />
                   </span>
                 </div>
-                <p style="color: red;">Warning: if your using <span style="font-weight: bolder;">Tiktok</span> browser it have a little bug, suggested using other browser</p>
+                <p style="color: red;">Warning: if your using <span style="font-weight: bolder;">Tiktok</span> browser
+                  it have a little bug, suggested using other browser</p>
+              </div>
+            </li>
+            <li class="l-section section">
+              <div class="intro">
+                <div class="intro--banner">
+
+                  <h1>Gacha<br>Counter</h1>
+                  <!-- <button class="cta">Hire Us
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button> -->
+                  <div>
+                    <h3>Total Gacha</h3>
+                    <h1>= <span id="totalz"></span> Gacha</h1>
+                  </div>
+
+                  <img src="assets/img/hutao.png" alt="Hutao">
+                </div>
+                <div class="intro--options">
+                  <span style="width: 100%;">
+                    <div class="work-request--information">
+                      <div class="information-name">
+                        <p>Primogem:</p>
+                        <input type="number" id="primogemz" name="primogemz" min="0" value="0"
+                          >
+                        <!-- <label for="primogemz" style="margin-left: 25px;">Primogem</label> -->
+
+                        <button class="btn-success" onclick="incrementPrimogems(160)">+160</button>
+                        <button class="btn-fail" onclick="decrementPrimogems(160)">-160</button>
+                      </div>
+                    </div>
+                  </span>
+
+                </div>
+                <p style="color: red; margin-top: 80px;">Warning: if your using <span
+                    style="font-weight: bolder;">Tiktok</span> browser it have a little bug, suggested using other
+                  browser</p>
               </div>
             </li>
             <li class="l-section section">
@@ -191,7 +261,7 @@
                       </svg>
                     </span>
                   </a>
-                  <img src="assets/img/about-visual.png" style="z-index: -1;" alt="Thank You">
+                  <img src="assets/img/about.png" style="z-index: -1;" alt="Thank You">
                 </div>
               </div>
             </li>

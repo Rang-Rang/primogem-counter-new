@@ -52,3 +52,41 @@ const onChangeHandler = () => {
 days.onchange = () => onChangeHandler();
 welkins.onchange = () => onChangeHandler();
 bp.onchange = () => onChangeHandler();
+
+
+// Script for Gacha Counter
+const primogemInput = document.getElementById("primogemz");
+const totalGachaOutput = document.getElementById("totalz");
+
+primogemInput.addEventListener("input", function() {
+  var primogems = primogemInput.value.trim() !== "" ? parseInt(primogemInput.value) : 0; // Jika input kosong, set nilai default ke 0
+  var gachaCount = Math.floor(primogems / 160);
+  totalGachaOutput.textContent = gachaCount;
+});
+
+// Initial calculation
+totalGachaOutput.textContent = 0; // Set nilai default untuk gacha counter saat halaman dimuat
+
+function incrementPrimogems(value) {
+	var primogemInput = document.getElementById("primogemz");
+	var currentValue = parseInt(primogemInput.value) || 0;
+	primogemInput.value = currentValue + value;
+	updateGachaCount();
+  }
+  
+  function decrementPrimogems(value) {
+	var primogemInput = document.getElementById("primogemz");
+	var currentValue = parseInt(primogemInput.value) || 0;
+	var newValue = currentValue - value >= 0 ? currentValue - value : 0;
+	primogemInput.value = newValue;
+	updateGachaCount();
+  }
+  
+  function updateGachaCount() {
+	var primogemInput = document.getElementById("primogemz");
+	var totalGachaOutput = document.getElementById("totalz");
+	var primogems = parseInt(primogemInput.value) || 0;
+	var gachaCount = Math.floor(primogems / 160);
+	totalGachaOutput.textContent = gachaCount;
+  }
+  
