@@ -84,6 +84,11 @@
       background-color: #970000;
     }
 
+    @media (max-width: 767) and (min-width: 601px) and (max-height: 680px){
+      .fonter {
+        font-size: 70%;
+      }
+    }
     
   </style>
 </head>
@@ -107,16 +112,16 @@
               <div class="intro">
                 <div class="intro--banner">
 
-                  <h1>Primogem<br>Counter</h1>
                   <!-- <button class="cta">About Rang Rang
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                  <span class="btn-background"></span>
-                </button> -->
-                  <div>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                      <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                        <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                      </g>
+                    </svg>
+                    <span class="btn-background"></span>
+                  </button> -->
+                  <div class="fonter" >
+                    <h1>Primogem<br>Counter</h1>
                     <h3>Total Primogems</h3>
                     <h1>= <span id="total"></span></h1>
                   </div>
@@ -141,17 +146,17 @@
                       <button class="btn-fail" style="margin-top: 10px;" onclick="resetDays()">Reset All</button>
                     </div>
                   </span>
-                  <span style="width: 40%">
+                  <span>
                     <h3><label for="welkin">Blessing of the welkin moon?</label></h3>
                     <input type="checkbox" id="welkin" />
 
                   </span>
-                  <span style="width: 25%">
+                  <span>
                     <h3><label for="bp">Battle Pass?</label></h3>
                     <input type="checkbox" id="bp" />
                   </span>
 
-                  <span style="width: 30%;">
+                  <span>
                     <h3>Spiral Abyss</h3>
                     <div style="display: flex; gap: 25px;">
                       <div>
@@ -183,16 +188,16 @@
                         <input type="radio" name="floor12" id="floor12_9" value="150" onclick="updatePrimogems(150)"> <label for="floor12_9">9</label><br>
                     </div>
                     
-                    </div>
-                  </span>
-                  <span>
-                    <p>
-                      <span id="days-value">1</span> Day Daily Commision,
-                      <span id="welkin-value">Without</span> Blessing of The Welkin Moon,
-                      <span id="bp-value">No</span> Battle Pass
-                    </p>  
-                  </span>
-                </div>
+                  </div>
+                </span>
+                <span>
+                </span>
+              </div>
+              <p>
+                <span id="days-value">1</span> Day Daily Commision,
+                <span id="welkin-value">Without</span> Blessing of The Welkin Moon,
+                <span id="bp-value">No</span> Battle Pass
+              </p>  
                   <!--                 
                 <p style="color: red;">Warning: if your using <span style="font-weight: bolder; font-style: italic;">Tiktok</span> browser
                   it have a little bug, suggested using other browser</p> -->
