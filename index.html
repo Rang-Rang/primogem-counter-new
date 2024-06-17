@@ -2,17 +2,42 @@
 <html lang="en">
 
 <head>
-  <title>Primogem Counter</title>
+  <title>Primogem Counters</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Primogem counter is just not about counting Primogem! take a look and make this website useful">
+  <meta name="description"
+    content="Primogem counter is just not about counting Primogem! take a look and make this website useful">
   <meta name="keywords" content="primogem, counter, genshin, genshinImpact, impact, genshin impact">
   <meta name="author" content="Rang rang">
-  <link rel="icon" type="image/png"
-    href="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/ce40f7429f6a162db872dc3cfd1f8905~c5_720x720.jpeg?lk3s=a5d48078&x-expires=1713621600&x-signature=JrImF6%2B%2Fzbi8mR7USV%2BHc3T6mDg%3D">
+  <link rel="icon" type="image/png" href="assets/img/icon.png">
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: transparent;
+      /* Menghapus background agar hanya menggunakan elemen canvas sebagai background */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      background: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      /* Mengatur z-index untuk memastikan canvas berada di belakang elemen lain */
+    }
+
     :root {
       --clr-primary: #3080e9;
       --clr-header: rgba(47, 119, 187, 0.5);
@@ -84,16 +109,16 @@
       background-color: #970000;
     }
 
-    @media (max-width: 767) and (min-width: 601px) and (max-height: 680px){
+    @media (max-width: 767) and (min-width: 601px) and (max-height: 680px) {
       .fonter {
         font-size: 70%;
       }
     }
-    
   </style>
 </head>
 
 <body>
+  <canvas id="spaceCanvas"></canvas>
   <div class="perspective effect-rotate-left">
     <div class="container">
       <div class="outer-nav--return"></div>
@@ -120,7 +145,7 @@
                     </svg>
                     <span class="btn-background"></span>
                   </button> -->
-                  <div class="fonter" >
+                  <div class="fonter">
                     <h1>Primogem<br>Counter</h1>
                     <h3>Total Primogems</h3>
                     <h1>= <span id="total"></span></h1>
@@ -161,44 +186,60 @@
                     <div style="display: flex; gap: 25px;">
                       <div>
                         <label for="floor9">Fl 9:</label><br>
-                        <input type="radio" name="floor9" id="floor9_0" value="0" onclick="updatePrimogems(0)"> <label for="floor9_0">0</label><br>
-                        <input type="radio" name="floor9" id="floor9_3" value="50" onclick="updatePrimogems(50)"> <label for="floor9_3">3</label><br>
-                        <input type="radio" name="floor9" id="floor9_6" value="100" onclick="updatePrimogems(100)"> <label for="floor9_6">6</label><br>
-                        <input type="radio" name="floor9" id="floor9_9" value="150" onclick="updatePrimogems(150)"> <label for="floor9_9">9</label><br>
-                    </div>
-                    <div>
+                        <input type="radio" name="floor9" id="floor9_0" value="0" onclick="updatePrimogems(0)"> <label
+                          for="floor9_0">0</label><br>
+                        <input type="radio" name="floor9" id="floor9_3" value="50" onclick="updatePrimogems(50)"> <label
+                          for="floor9_3">3</label><br>
+                        <input type="radio" name="floor9" id="floor9_6" value="100" onclick="updatePrimogems(100)">
+                        <label for="floor9_6">6</label><br>
+                        <input type="radio" name="floor9" id="floor9_9" value="200" onclick="updatePrimogems(200)">
+                        <label for="floor9_9">9</label><br>
+                      </div>
+                      <div>
                         <label for="floor10">Fl 10:</label><br>
-                        <input type="radio" name="floor10" id="floor10_0" value="0" onclick="updatePrimogems(0)"> <label for="floor10_0">0</label><br>
-                        <input type="radio" name="floor10" id="floor10_3" value="50" onclick="updatePrimogems(50)"> <label for="floor10_3">3</label><br>
-                        <input type="radio" name="floor10" id="floor10_6" value="100" onclick="updatePrimogems(100)"> <label for="floor10_6">6</label><br>
-                        <input type="radio" name="floor10" id="floor10_9" value="150" onclick="updatePrimogems(150)"> <label for="floor10_9">9</label><br>
-                    </div>
-                    <div>
+                        <input type="radio" name="floor10" id="floor10_0" value="0" onclick="updatePrimogems(0)"> <label
+                          for="floor10_0">0</label><br>
+                        <input type="radio" name="floor10" id="floor10_3" value="50" onclick="updatePrimogems(50)">
+                        <label for="floor10_3">3</label><br>
+                        <input type="radio" name="floor10" id="floor10_6" value="100" onclick="updatePrimogems(100)">
+                        <label for="floor10_6">6</label><br>
+                        <input type="radio" name="floor10" id="floor10_9" value="200" onclick="updatePrimogems(200)">
+                        <label for="floor10_9">9</label><br>
+                      </div>
+                      <div>
                         <label for="floor11">Fl 11:</label><br>
-                        <input type="radio" name="floor11" id="floor11_0" value="0" onclick="updatePrimogems(0)"> <label for="floor11_0">0</label><br>
-                        <input type="radio" name="floor11" id="floor11_3" value="50" onclick="updatePrimogems(50)"> <label for="floor11_3">3</label><br>
-                        <input type="radio" name="floor11" id="floor11_6" value="100" onclick="updatePrimogems(100)"> <label for="floor11_6">6</label><br>
-                        <input type="radio" name="floor11" id="floor11_9" value="150" onclick="updatePrimogems(150)"> <label for="floor11_9">9</label><br>
-                    </div>
-                    <div>
+                        <input type="radio" name="floor11" id="floor11_0" value="0" onclick="updatePrimogems(0)"> <label
+                          for="floor11_0">0</label><br>
+                        <input type="radio" name="floor11" id="floor11_3" value="50" onclick="updatePrimogems(50)">
+                        <label for="floor11_3">3</label><br>
+                        <input type="radio" name="floor11" id="floor11_6" value="100" onclick="updatePrimogems(100)">
+                        <label for="floor11_6">6</label><br>
+                        <input type="radio" name="floor11" id="floor11_9" value="200" onclick="updatePrimogems(200)">
+                        <label for="floor11_9">9</label><br>
+                      </div>
+                      <div>
                         <label for="floor12">Fl 12:</label><br>
-                        <input type="radio" name="floor12" id="floor12_0" value="0" onclick="updatePrimogems(0)"> <label for="floor12_0">0</label><br>
-                        <input type="radio" name="floor12" id="floor12_3" value="50" onclick="updatePrimogems(50)"> <label for="floor12_3">3</label><br>
-                        <input type="radio" name="floor12" id="floor12_6" value="100" onclick="updatePrimogems(100)"> <label for="floor12_6">6</label><br>
-                        <input type="radio" name="floor12" id="floor12_9" value="150" onclick="updatePrimogems(150)"> <label for="floor12_9">9</label><br>
+                        <input type="radio" name="floor12" id="floor12_0" value="0" onclick="updatePrimogems(0)"> <label
+                          for="floor12_0">0</label><br>
+                        <input type="radio" name="floor12" id="floor12_3" value="50" onclick="updatePrimogems(50)">
+                        <label for="floor12_3">3</label><br>
+                        <input type="radio" name="floor12" id="floor12_6" value="100" onclick="updatePrimogems(100)">
+                        <label for="floor12_6">6</label><br>
+                        <input type="radio" name="floor12" id="floor12_9" value="200" onclick="updatePrimogems(200)">
+                        <label for="floor12_9">9</label><br>
+                      </div>
+
                     </div>
-                    
-                  </div>
-                </span>
-                <span>
-                </span>
-              </div>
-              <p>
-                <span id="days-value">1</span> Day Daily Commision,
-                <span id="welkin-value">Without</span> Blessing of The Welkin Moon,
-                <span id="bp-value">No</span> Battle Pass
-              </p>  
-                  <!--                 
+                  </span>
+                  <span>
+                  </span>
+                </div>
+                <p>
+                  <span id="days-value">1</span> Day Daily Commision,
+                  <span id="welkin-value">Without</span> Blessing of The Welkin Moon,
+                  <span id="bp-value">No</span> Battle Pass
+                </p>
+                <!--                 
                 <p style="color: red;">Warning: if your using <span style="font-weight: bolder; font-style: italic;">Tiktok</span> browser
                   it have a little bug, suggested using other browser</p> -->
               </div>
@@ -228,7 +269,7 @@
                     <div class="work-request--information">
                       <div class="information-name">
                         <p>Primogem:</p>
-                        <input type="number" id="primogemz" name="primogemz" min="0" value="0">
+                        <input type="number" id="primogemz" name="primogemz" min="0" value="0" readonly>
                         <!-- <label for="primogemz" style="margin-left: 25px;">Primogem</label> -->
                       </div>
                     </div>
@@ -252,7 +293,7 @@
             </li>
             <li class="l-section section">
               <div class="work">
-                <h2>Contributors</h2>
+                <h2>Creator</h2>
                 <div class="work--lockup">
                   <ul class="slider">
                     <!-- <li class="slider--item slider--item-left">
@@ -266,15 +307,13 @@
                       </a>
                     </li> -->
                     <li class="slider--item slider--item-center">
-                      <a href="https://rang-rang.netlify.app/">
-                        <div class="slider--item-image">
-                          <img
-                            src="assets/img/ado.jpg"
-                            alt="Rang Rang">
-                        </div>
-                        <p class="slider--item-title">Rang Rang</p>
-                        <p class="slider--item-description">Creator | Designer | Streamer</p>
-                      </a>
+                      <!-- <a href="https://rang-rang.netlify.app/"> -->
+                      <div class="slider--item-image">
+                        <img src="assets/img/icon.png" alt="Rang Rang">
+                      </div>
+                      <p class="slider--item-title">Rang Rang</p>
+                      <p class="slider--item-description">Streamer, HoyoCreators, Programmer, Bug Hunter</p>
+                      <!-- </a> -->
                     </li>
                     <!-- <li class="slider--item slider--item-right">
                       <a href="#0">
@@ -287,7 +326,7 @@
                       </a>
                     </li> -->
                   </ul>
-                  <div class="slider--prev">
+                  <!-- <div class="slider--prev">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
                       style="enable-background:new 0 0 150 118;" xml:space="preserve">
@@ -307,7 +346,7 @@
                           d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
                       </g>
                     </svg>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </li>
@@ -315,7 +354,7 @@
               <div class="about">
                 <div class="about--banner">
                   <h2>Thank You<br>For using<br>Primogem<br>Counter</h2>
-                  <a href="https://rang-rang.netlify.app/">Rang Rang Bio Profile
+                  <a href="https://rang-rangrang.web.app/">Rang Rang Bio Profile
                     <span>
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
@@ -339,6 +378,111 @@
         <script src="assets/js/functions-min.js"></script>
         <script src="assets/js/counter.js"></script>
         <script src="assets/js/vibrate.js"></script>
+        <script>
+          var canvas = document.getElementById('spaceCanvas');
+          var ctx = canvas.getContext('2d');
+
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+
+          var stars = [];
+          var numStars = 400;
+
+          for (var i = 0; i < numStars; i++) {
+            stars.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              radius: Math.random() * 1.5,
+              color: randomColor(), // Menggunakan fungsi randomColor untuk warna yang bervariasi
+              speed: Math.random() * 0.2
+            });
+          }
+
+          // Menambahkan bintang-bintang jatuh unik
+          var uniqueStars = [];
+          var numUniqueStars = Math.floor(Math.random() * 8) + 2; // Menambahkan 2-5 bintang jatuh unik
+          for (var i = 0; i < numUniqueStars; i++) {
+            uniqueStars.push({
+              x: Math.random() * canvas.width,
+              y: -20, // Mulai dari atas layar
+              radius: Math.random() * 1.5 + 1, // Ukuran yang sedikit lebih besar
+              color: '#ED0740', // Warna kuning
+              speed: Math.random() * 0.5 + 0.2, // Kecepatan yang beragam
+              tailLength: Math.random() * 20 + 10, // Panjang ekor
+              tailColor: 'rgba(255, 215, 0, 0.2)', // Warna ekor kuning transparan
+              directionX: Math.random() > 0.5 ? 1 : -1 // Arah horizontal acak
+            });
+          }
+
+          function drawStars() {
+            for (var i = 0; i < numStars; i++) {
+              var star = stars[i];
+              ctx.beginPath();
+              ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+              ctx.fillStyle = star.color;
+              ctx.fill();
+            }
+          }
+
+          function drawUniqueStars() {
+            for (var i = 0; i < numUniqueStars; i++) {
+              var star = uniqueStars[i];
+              ctx.beginPath();
+              ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+              ctx.fillStyle = star.color;
+              ctx.fill();
+
+              // Menggambar ekor bintang
+              ctx.beginPath();
+              ctx.moveTo(star.x, star.y);
+              ctx.lineTo(star.x - star.tailLength * star.directionX, star.y - star.tailLength); // Mengubah arah ekor
+              ctx.strokeStyle = star.tailColor;
+              ctx.stroke();
+            }
+          }
+
+          function updateStars() {
+            for (var i = 0; i < numStars; i++) {
+              var star = stars[i];
+              star.x += star.speed;
+              if (star.x > canvas.width) {
+                star.x = 0;
+              }
+            }
+          }
+
+          function updateUniqueStars() {
+            for (var i = 0; i < numUniqueStars; i++) {
+              var star = uniqueStars[i];
+              star.x += star.speed * star.directionX;
+              star.y += star.speed;
+
+              // Jika bintang jatuh unik keluar dari layar, kembalikan ke posisi atas
+              if (star.x > canvas.width || star.x < 0 || star.y > canvas.height) {
+                star.x = Math.random() * canvas.width;
+                star.y = -20;
+              }
+            }
+          }
+
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            updateStars();
+            drawStars();
+            updateUniqueStars(); // Memanggil fungsi update untuk bintang jatuh unik
+            drawUniqueStars(); // Memanggil fungsi gambar untuk bintang jatuh unik
+            requestAnimationFrame(animate);
+          }
+
+          // Fungsi untuk menghasilkan warna acak
+          function randomColor() {
+            var colors = ['#FFFFFF', '#CCCCCC', '#AAAAAA', '#777777', '#555555'];
+            return colors[Math.floor(Math.random() * colors.length)];
+          }
+
+          animate();
+        </script>
+        </script>
 </body>
 
 </html>
